@@ -3,7 +3,13 @@ import argparse
 import json
 import os
 import sys
-from typing import cast, TYPE_CHECKING
+
+import sys
+
+if sys.version_info >= (3, 8):
+    from typing import cast, TYPE_CHECKING # pylint: disable=no-name-in-module
+else:
+    from typing_extensions import cast, TYPE_CHECKING
 
 import coloredlogs
 from zuper_commons.fs import AbsDirPath, FilePath
