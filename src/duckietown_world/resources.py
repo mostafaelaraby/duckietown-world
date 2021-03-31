@@ -1,7 +1,12 @@
 import os
 from functools import lru_cache
 from pathlib import Path
-from typing import cast, Dict, List, Tuple
+import sys
+
+if sys.version_info >= (3, 8):
+    from typing import cast, Dict, List, Tuple  # pylint: disable=no-name-in-module
+else:
+    from typing_extensions import cast, Dict, List, Tuple 
 
 from zuper_commons.fs import AbsDirPath, AbsFilePath, DirPath, FilePath, locate_files
 from zuper_commons.types import ZKeyError
